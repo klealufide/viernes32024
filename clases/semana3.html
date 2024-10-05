@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semana3</title>
+    <style>
+        * {
+          color: red;  
+        }
+
+        h1 {
+            color: violet;
+        }
+
+        p {
+            color: blue;
+        }
+
+        .letraverde {
+            color: green;
+        }
+
+        #idTitulo {
+            color: cadetblue;
+        }
+
+        #padre2 h1 {
+            color: orange;
+        }
+
+        #padre1 > p {
+            color: orange;
+        }
+
+        #padre1  h1 + p {
+            color:blue;
+        }
+
+        #padre2 h1 ~ p {
+            color:black;
+        }
+
+        .container-flex{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 20px;
+            background-color: aqua;
+        }
+
+        .item-flex{
+            background-color: lightcoral;
+            padding: 20px;
+            margin: 10px;
+            border-color: black;
+            color: white;
+        }
+
+        .container-grid{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+
+        }
+
+        .item-grid{
+            background-color: lightcoral;
+            padding: 20px;
+            margin: 10px;
+            border-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="idTitulo">Titulo</h1>
+    <h1 class="letraverde">Titulo</h1>
+    <h1>Titulo</h1>
+    <span>texto</span>
+    <p>Parrafo1</p>
+    <p class="letraverde">Parrafo2</p>
+    <p>Parrafo3</p>
+    <p class="letraverde">Parrafo4</p>
+    <p class="letraverde">Parrafo5</p>
+    <div id="padre1">
+        <h1>Padre1</h1>
+        <p>Hijo Padre1</p>
+        <p>Hijo Padre1</p>
+        <p>Hijo Padre1</p>
+        <div  id="padre2">
+            <h1>Padre2</h1>
+            <p>Hijo Padre2</p>
+            <p>Hijo Padre2</p>
+            <p>Hijo Padre2</p>
+        </div>
+
+        <!--FLEXBOX-->
+        <div class="container-flex">
+            <div class="item-flex">Elemento1</div>
+            <div class="item-flex">Elemento2</div>
+            <div class="item-flex">Elemento3</div>
+        </div>
+        <!--GRID-->
+        <div class="container-grid">
+            <div class="item-grid">Elemento1</div>
+            <div class="item-grid">Elemento2</div>
+            <div class="item-grid">Elemento3</div>
+            <div class="item-grid">Elemento4</div>
+            <div class="item-grid">Elemento1</div>
+            <div class="item-grid">Elemento2</div>
+            <div class="item-grid">Elemento3</div>
+            <div class="item-grid">Elemento4</div>
+        </div>
+    </div>
+</body>
+</html>
