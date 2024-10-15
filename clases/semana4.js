@@ -34,8 +34,9 @@ console.log(nombre.length);
 console.log(nombre.startsWith("Ka"));
 console.log(edad.toString());
 console.log(esProfesor.toString());
-
-
+console.log("-----------------------------------");
+console.log(nombre.toLowerCase());
+console.log(nombre.toUpperCase());
 
 if (edad > edadMayor) {
     console.log("es mayor de edad");
@@ -52,6 +53,23 @@ let color = "rojo";
 switch (color) {
     case 'rojo':
         console.log("detengase");
+        break;
+    case 'amarillo':
+        console.log("precaucion");
+        break;
+    case 'verde':
+        console.log("siga");
+        break;
+    default:
+        console.log("color no definido");
+        break;
+
+}
+
+let dia = 1;
+switch (dia) {
+    case 1:
+        console.log("Lunes");
         break;
     case 'amarillo':
         console.log("precaucion");
