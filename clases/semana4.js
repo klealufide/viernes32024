@@ -125,3 +125,28 @@ function multiplicar(numero1, numero2){
 let resultado = multiplicar(6,7);
 
 console.log(resultado);
+
+
+function calculadora(operador, numero1, numero2){
+    let resultado = 0;
+    switch(operador){
+        case "+":
+            resultado = numero1 + numero2;
+        break;
+        case "*":
+            resultado = numero1 * numero2;
+        break;
+        case "-":
+            resultado = numero1 - numero2;
+        break;
+        case "/":
+            resultado = numero1 / numero2;
+        break;
+    }
+    return resultado;
+}
+
+console.log(calculadora("+",2,5));
+console.log(calculadora("-", 3,1));
+console.log(calculadora("*",2,3));
+console.log(calculadora("/",4,2));
