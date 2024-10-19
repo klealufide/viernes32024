@@ -171,3 +171,17 @@ document.getElementById("miBoton").addEventListener("mouseover", function(){
         document.getElementById("email").style.backgroundColor = "white";
     }
 })
+/*
+document.getElementById("contar").addEventListener("click", function(){
+ let contador = parseInt(document.getElementById("contador").innerHTML);
+ contador++;
+ document.getElementById("contador").innerHTML = contador;
+})
+ */
+
+let contador = 0;
+
+document.getElementById("contar").addEventListener("click", function(){
+    contador++;
+    document.getElementById("contador").innerHTML = contador;
+})
