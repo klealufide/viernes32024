@@ -150,3 +150,24 @@ console.log(calculadora("+",2,5));
 console.log(calculadora("-", 3,1));
 console.log(calculadora("*",2,3));
 console.log(calculadora("/",4,2));
+
+let saludar = document.getElementById("saludo");
+saludar.innerHTML = "Hola todos";
+
+
+let nuevoElemento = document.createElement("h1");
+nuevoElemento.innerHTML = "Nuevo Elemento";
+document.body.append(nuevoElemento);
+
+///document.getElementById("mensaje").innerHTML = "Mensaje enviado!";
+
+
+document.getElementById("miBoton").addEventListener("mouseover", function(){
+    document.getElementById("mensaje").style.display = "block";
+    saludar.style.color = "blue";
+    if(document.getElementById("email").value == ""){
+        document.getElementById("mensaje").innerHTML = "Email vacio";
+        document.getElementById("email").style.borderColor = "red";
+        document.getElementById("email").style.backgroundColor = "white";
+    }
+})

@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="./semana4.js"></script>
+
     <style>
         body {
             margin: 10px;
@@ -16,10 +16,6 @@
 
         .form-label {
             color: red;
-        }
-
-        .form-control {
-            background-color: blue;
         }
 
         .form-check-input {
@@ -44,9 +40,14 @@
 </head>
 
 <body>
+    <h1 id="saludo">Hola Semana 5</h1>
+    <div id="mensaje" style="display: none;">Mensaje enviado!</div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+    <div>
+        <button id="miBoton" type="button"> Enviar</button>
     </div>
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
@@ -99,5 +100,5 @@
         </div>
     </div>
 </body>
-
+<script src="./semana4.js"></script>
 </html>
