@@ -82,3 +82,46 @@ switch (dia) {
         break;
 
 }
+
+// Semana  5
+
+for(let i = 0; i< 10; i++){
+    console.log(i);
+}
+
+let frutas = ["manzana", "melon", "fresa", "sandia"];
+
+for(let posicion in frutas){
+    console.log(frutas[posicion])
+}
+for(let posicion in frutas){
+    if(frutas[posicion] == "sandia"){
+        console.log("la posicion en el array de frutas para sandia es: ", posicion);
+        break;
+    }
+    console.log(frutas[posicion])
+}
+
+console.log(frutas[0])
+
+edad = 54;
+
+do {
+    edad++;
+    console.log(edad);
+
+} while(edad < 50)
+edad = 45;
+while(edad < 50){
+    edad++;
+    console.log(edad);
+   
+}
+
+function multiplicar(numero1, numero2){
+    return numero1*numero2;
+}
+
+let resultado = multiplicar(6,7);
+
+console.log(resultado);
