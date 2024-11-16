@@ -12,10 +12,17 @@
 
 <body>
     <?php
-        include('header.php')
+    include('header.php')
     ?>
     <main>
-       
+        <h1>Inicio de sesion</h1>
+        <form method="post" action="procesar_login.php">
+            <label>Usuario:</label><br>
+            <input type="text" name="username" id="username"><br>
+            <label>Clave:</label><br>
+            <input type="password" name="password" id="password"><br>
+            <button type="submit">Iniciar</button>
+        </form>
     </main>
 
     <footer>

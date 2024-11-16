@@ -9,21 +9,17 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li class="menu-item"><a href="index.html">Inicio</a></li>
-                <li class="menu-item"><a href="#">Informacion</a></li>
-                <li class="menu-item"><a href="#">Matricula</a></li>
-                <li class="menu-item"><a href="contact.php">Contacto</a></li>
-            </ul>
-        </nav>
-        <h1>Bienvenidos a la Matricula en Linea</h1>
-        <p>La mejor opcion para registrar a sus hijos en nuestra escuela.</p>
-    </header>
+    <?php
+        include('header.php')
+    ?>
     <main>
         <section>
+            <?php if(!empty($_SESSION)){
+                echo "<h1>Hola ".$_SESSION['username']."</h1>";
+            } ?>
+     
             <h2>Por que eligir nuestra escuela?</h2>
             <p>Contamos con el mejor equipo educativo, instalaciones modernas y un ambiente familiar donde sus hijos pueden crecer de la mejor manera.</p>
             <div>
@@ -68,9 +64,7 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Ambiente Cliente WEB Servidor - Todos los derechos reservados</p>
-        <p><a href="privacidad.html">Politica de privacidad</a> | <a href="terminos.html">Terminos y condiciones</a></p>
-    </footer>
+    <?php include('footer.php')?>
 </body>
+
 </html>
