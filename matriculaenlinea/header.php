@@ -5,7 +5,7 @@ $menu = [
     ["url"=> "index.php", "label"=> "Inicio"],
     ["url"=> "#", "label"=> "Informacion"],
     ["url"=> "#", "label"=> "Matricula"],
-    ["url"=> "#", "label"=> "Contacto"],
+    ["url"=> "contact.php", "label"=> "Contacto"],
     ["url"=> "login.php", "label"=> "Login"],
 ];
 
