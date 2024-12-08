@@ -44,8 +44,27 @@ $(function () {
         }
 
         if (isValid) {
-            alert('Formulario enviado correctamente.');
-            $(this).unbind('submit').submit();
+            fetch("procesar_contacto.php", {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: $('#contact').val().trim(),
+                    email: $('#email').val().trim(),
+                    subject: $('#subject').val().trim(),
+                    message: $('#message').val().trim()
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    if (data.status == "00") {
+                        $('#contact').val("");
+                        $('#email').val("");
+                        $('#subject').val("");
+                        $('#message').val("");
+                    }
+                    alert(data.message);
+                });
         }
     });
 
@@ -99,11 +118,51 @@ $(function () {
         }
     });
     $('.price').hide();
-    $(".image-price").on("click", function(){
+    $(".image-price").on("click", function () {
         $(this).find(".price").fadeIn();
     });
 
-    $(".image-price").on("mouseleave", function(){
+    $(".image-price").on("mouseleave", function () {
         $(this).find(".price").fadeOut();
     });
+
+    $('#error-name-teacher').hide();
+
+
+    $('#teacherForm').on('submit', function (e) {
+        e.preventDefault();
+        let isValid = true;
+
+        if ($('#name-teacher').val().trim() === '') {
+            $('#name-teacher').addClass('error');
+            $('#error-name-teacher').show();
+            isValid = false;
+        } else {
+            $('#name-teacher').removeClass('error');
+            $('#error-name-teacher').hide();
+        }
+
+
+        if (isValid) {
+            $.post("teacherBE.php", { action: "add", name: $('#name-teacher').val().trim() }, function (data) {
+                if (data.status == "00") {
+                    $('#name-teacher').val("");
+                    $('#listTeacher').append("<tr><td>"+data.name+"</td></tr>");
+                }
+                alert(data.message);
+            }, "json");
+        }
+    });
+
+    function getAllTeacher(){
+        $.post("teacherBE.php", { action: "getAll"}, function (data) {
+            if (data.status == "00") {
+                data.teachers.forEach(element => {
+                    $('#listTeacher').append("<tr><td>"+element.name+"</td></tr>");
+                });
+            }
+        }, "json");
+    }
+
+    getAllTeacher();
 })
